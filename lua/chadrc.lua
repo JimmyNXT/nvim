@@ -1,22 +1,21 @@
--- This file  needs to have same structure as nvconfig.lua 
--- https://github.com/NvChad/NvChad/blob/v2.5/lua/nvconfig.lua
-
 ---@type ChadrcConfig
 local M = {}
 
-M.ui = {
-	theme = "catppuccin",
+local highlights = require "custom.highlights"
 
-	statusline = {
-		overriden_modules = function(modules)
-		  modules[table.maxn(modules) + 1] = (function()
-			return "%#St_time_sep#%#St_time_icon#󰥔 %#St_time_text#" .. os.date " %H:%M  "
-		  end)()
-		end,
-	  },
-	  
-	--   hl_override = highlights.override,
-	--   hl_add = highlights.add,
+M.ui = {
+  statusline = {
+    overriden_modules = function(modules)
+      modules[table.maxn(modules) + 1] = (function()
+        return "%#St_time_sep#%#St_time_icon#󰥔 %#St_time_text#" .. os.date " %H:%M  "
+      end)()
+    end,
+  },
+  theme = "catppuccin",
+  theme_toggle = { "catppuccin", "catppuccin" },
+
+  hl_override = highlights.override,
+  hl_add = highlights.add,
 }
 
 return M
