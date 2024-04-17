@@ -4,20 +4,49 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls" }
 
--- lsps with default config
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    on_init = on_init,
-    capabilities = capabilities,
-  }
-end
+lspconfig.html.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+}
 
--- typescript
+lspconfig.cssls.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+}
+
+lspconfig.rust_analyzer.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  filetypes = { "rust" },
+  root_dir = lspconfig.util.root_pattern "Cargo.toml",
+}
+
 lspconfig.tsserver.setup {
   on_attach = on_attach,
   on_init = on_init,
   capabilities = capabilities,
+  init_options = {
+    preferences = {
+      disableSuggestions = true,
+    },
+  },
+}
+
+lspconfig.clangd.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  filetypes = { "c", "cpp" },
+  root_dir = lspconfig.util.root_pattern(".git", "compile_commands.json"),
+}
+
+lspconfig.pyright.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  filetypes = { "python" },
 }

@@ -5,12 +5,18 @@
 local M = {}
 
 M.ui = {
-	theme = "onedark",
+	theme = "catppuccin",
 
-	-- hl_override = {
-	-- 	Comment = { italic = true },
-	-- 	["@comment"] = { italic = true },
-	-- },
+	statusline = {
+		overriden_modules = function(modules)
+		  modules[table.maxn(modules) + 1] = (function()
+			return "%#St_time_sep#%#St_time_icon#󰥔 %#St_time_text#" .. os.date " %H:%M  "
+		  end)()
+		end,
+	  },
+	  
+	  hl_override = highlights.override,
+	  hl_add = highlights.add,
 }
 
 return M
