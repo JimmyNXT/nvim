@@ -3,15 +3,19 @@ local M = {}
 
 local highlights = require "highlights"
 M.ui = {
-  statusline = {
-    overriden_modules = function(modules)
-      modules[table.maxn(modules) + 1] = (function()
-        return "%#St_time_sep#%#St_time_icon#󰥔 %#St_time_text#" .. os.date " %H:%M  "
-      end)()
-    end,
-  },
   theme = "catppuccin",
   theme_toggle = { "catppuccin", "catppuccin" },
+
+  statusline = {
+    order = {"mode", "file", "git", "%=", "lsp_msg", "%=", "diagnostics", "lsp", "cwd", "cursor", "time"},
+    
+    modules = {
+      time = function()
+        return "%#St_time_sep#%#St_time_icon#󰥔 %#St_time_text#" .. os.date " %H:%M  "
+      end
+    }
+  },
+  
 
   hl_override = highlights.override,
   hl_add = highlights.add,
