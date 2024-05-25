@@ -2,6 +2,7 @@ require "nvchad.options"
 
 vim.opt.spelllang = "en_gb"
 vim.opt.spell = true
+vim.opt.guifont= "SauceCodePro NF SemiBold"
 
 -- add yours here!
 
