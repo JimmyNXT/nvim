@@ -84,6 +84,7 @@ return {
       require("obsidian").setup(opts)
     end,
   },
+
   {
     "hedyhli/outline.nvim",
     lazy = true,
