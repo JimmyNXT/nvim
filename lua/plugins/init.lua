@@ -1,3 +1,4 @@
+require "options"
 return {
   {
     "nvim-treesitter/nvim-treesitter",
@@ -13,12 +14,14 @@ return {
       require("nvim-treesitter.configs").setup(opts)
     end,
   },
+
   {
     "nvim-tree/nvim-tree.lua",
     opts = function()
       return require "configs.nvimtree"
     end,
   },
+
   {
     "williamboman/mason.nvim",
     opts = function()
@@ -38,6 +41,7 @@ return {
       vim.g.mason_binaries_list = opts.ensure_installed
     end,
   },
+
   {
     "stevearc/conform.nvim",
     -- event = 'BufWritePre', -- uncomment for format on save
@@ -45,6 +49,7 @@ return {
       require "configs.conform"
     end,
   },
+
   {
     "mfussenegger/nvim-lint",
     event = "VeryLazy",
@@ -52,6 +57,7 @@ return {
       return require "configs.lint"
     end,
   },
+
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -59,9 +65,10 @@ return {
       require "configs.lspconfig"
     end,
   },
+
   {
     "epwalsh/obsidian.nvim",
-    lazy = true,
+    lazy = false,
     ft = "markdown",
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -77,5 +84,16 @@ return {
       require("obsidian").setup(opts)
     end,
   },
+  {
+    "hedyhli/outline.nvim",
+    lazy = true,
+    cmd = { "Outline", "OutlineOpen" },
 
+    opts = function()
+      return require "configs.outline"
+    end,
+    config = function(_, opts)
+      require("outline").setup(opts)
+    end,
+  },
 }

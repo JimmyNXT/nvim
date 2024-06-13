@@ -110,7 +110,7 @@ local options = {
 
   -- Optional, boolean or a function that takes a filename and returns a boolean.
   -- `true` indicates that you don't want obsidian.nvim to manage frontmatter.
-  disable_frontmatter = true,
+  disable_frontmatter = false,
 
   -- Optional, alternatively you can customize the frontmatter data.
   note_frontmatter_func = function(note)
@@ -155,8 +155,8 @@ local options = {
   -- URL it will be ignored but you can customize this behavior here.
   follow_url_func = function(url)
     -- Open the URL in the default web browser.
-    vim.fn.jobstart { "open", url } -- Mac OS
-    -- vim.fn.jobstart({"xdg-open", url})  -- linux
+    -- vim.fn.jobstart { "open", url } -- Mac OS
+    vim.fn.jobstart({"xdg-open", url})  -- linux
   end,
 
   -- Optional, set to true if you use the Obsidian Advanced URI plugin.

@@ -11,6 +11,10 @@ local config = {
       },
     },
   },
+
+  view = {
+    preserve_window_proportions = false,
+  }
 }
 
 return config

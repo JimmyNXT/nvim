@@ -8,7 +8,8 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 map("n", "<leader>fm", function()
     require("conform").format()
 end)
-
+map("n", "<leader>fj", "<CMD>Telescope marks<CR>", { desc = "Telescope Marks" })
+map("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Toggle Symbols Outline" })
 
 --map("i", "jk", "<ESC>")
 
