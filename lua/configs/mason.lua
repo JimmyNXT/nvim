@@ -19,6 +19,10 @@ local config = {
     "pyright",
     "black",
 
+
+    -- Markdown
+    "marksman",
+
     -- "python3",
     -- "python3-venv",
     -- "nodejs",

@@ -97,4 +97,7 @@ return {
       require("outline").setup(opts)
     end,
   },
+  {
+    "tpope/vim-fugitive"
+  }
 }

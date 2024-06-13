@@ -10,7 +10,8 @@ map("n", "<leader>fm", function()
 end)
 map("n", "<leader>fj", "<CMD>Telescope marks<CR>", { desc = "Telescope Marks" })
 map("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Toggle Symbols Outline" })
-
+map("n", "<leader>gh", "<cmd>Gitsigns preview_hunk<CR>", { desc = "Git Perview Hunk" })
+map("n", "<leader>gbt", "<cmd>Gitsigns toggle_current_line_blame<CR>", { desc =  "Git Toggle blame" })
 --map("i", "jk", "<ESC>")
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
