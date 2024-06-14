@@ -107,4 +107,25 @@ return {
       "tpope/vim-unimpaired",
     },
   },
+  {
+    "mfussenegger/nvim-dap",
+    lazy = false,
+    opts = function ()
+      return require("configs.dap")
+    end,
+    config = function (_, opts)
+      
+    end
+  },
+  {
+    "stevearc/oil.nvim",
+    cmd = {"Oil"},
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = function ()
+      return require("configs.oil")
+    end,
+    config = function(_, opts)
+      require("oil").setup(opts)
+    end,
+  },
 }
