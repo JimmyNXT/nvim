@@ -11,10 +11,12 @@ local config = {
       },
     },
   },
-
+  filter = {
+    dotfiles = true,
+  },
   view = {
     preserve_window_proportions = false,
-  }
+  },
 }
 
 return config
