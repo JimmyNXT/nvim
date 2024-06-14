@@ -20,7 +20,7 @@ local config = {
   },
   keymaps = {
     ["<C-c>"] = false,
-    ["q"] = "actions.close",
+    ["<esc>"] = "actions.close",
   },
 }
 
