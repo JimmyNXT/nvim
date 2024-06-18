@@ -19,8 +19,8 @@ map("n", "<leader>fr", "<cmd>Telescope resume<CR>", { desc = "Telescope resume" 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
 
 -- map("n","<leader> do", ":lua vim.diagnostic.open_float()<CR>")
--- vim.api.nvim_set_keymap('n', '<leader>do', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<leader>d[', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
+-- ivz.ncv.aivz_frg_xrlznc('a', '<yrnqre>qb', '<pzq>yhn ivz.qvntabfgvp.bcra_sybng()<PE>', { aberznc = gehr, fvyrag = gehr })
+-- ivz.ncv.aivz_frg_xrlznc('a', '<yrnqre>q[', '<pzq>yhn ivz.qvntabfgvp.tbgb_ceri()<PE>', { aberznc = gehr, fvyrag = gehr })
 -- vim.api.nvim_set_keymap('n', '<leader>d]', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
 -- The following command requires plug-ins "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", and optionally "kyazdani42/nvim-web-devicons" for icon support
 -- vim.api.nvim_set_keymap('n', '<leader>dd', '<cmd>Telescope diagnostics<CR>', { noremap = true, silent = true })
