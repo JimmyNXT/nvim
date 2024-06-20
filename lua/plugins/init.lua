@@ -31,7 +31,6 @@ return {
       dofile(vim.g.base46_cache .. "mason")
       require("mason").setup(opts)
 
-      -- custom nvchad cmd to install all mason binaries listed
       vim.api.nvim_create_user_command("MasonInstallAll", function()
         if opts.ensure_installed and #opts.ensure_installed > 0 then
           vim.cmd("MasonInstall " .. table.concat(opts.ensure_installed, " "))
@@ -99,7 +98,7 @@ return {
   },
   {
     "tpope/vim-fugitive",
-    cmd = {"Git"},
+    cmd = { "Git" },
     event = "VeryLazy",
     dependencies = {
       "tpope/vim-rhubarb",
@@ -110,22 +109,48 @@ return {
   {
     "mfussenegger/nvim-dap",
     lazy = false,
-    opts = function ()
-      return require("configs.dap")
+    opts = function()
+      return require "configs.dap"
     end,
-    config = function (_, opts)
-      
-    end
+    config = function(_, opts) end,
   },
-  -- {
-  --   "stevearc/oil.nvim",
-  --   cmd = {"Oil"},
-  --   dependencies = { "nvim-tree/nvim-web-devicons" },
-  --   opts = function ()
-  --     return require("configs.oil")
-  --   end,
-  --   config = function(_, opts)
-  --     require("oil").setup(opts)
-  --   end,
-  -- },
+  {
+    "nvim-focus/focus.nvim",
+    lazy = false,
+    opts = function()
+      return require "configs.focus"
+    end,
+    config = function(_, opts)
+      require("focus").setup(opts)
+
+      local ignore_filetypes = { "neo-tree", "NvimTree" }
+      local ignore_buftypes = { "nofile", "prompt", "popup" }
+
+      local augroup = vim.api.nvim_create_augroup("FocusDisable", { clear = true })
+
+      vim.api.nvim_create_autocmd("WinEnter", {
+        group = augroup,
+        callback = function(_)
+          if vim.tbl_contains(ignore_buftypes, vim.bo.buftype) then
+            vim.w.focus_disable = true
+          else
+            vim.w.focus_disable = false
+          end
+        end,
+        desc = "Disable focus autoresize for BufType",
+      })
+
+      vim.api.nvim_create_autocmd("FileType", {
+        group = augroup,
+        callback = function(_)
+          if vim.tbl_contains(ignore_filetypes, vim.bo.filetype) then
+            vim.b.focus_disable = true
+          else
+            vim.b.focus_disable = false
+          end
+        end,
+        desc = "Disable focus autoresize for FileType",
+      })
+    end,
+  },
 }

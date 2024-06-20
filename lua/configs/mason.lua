@@ -22,6 +22,9 @@ local config = {
 
     -- Markdown
     "marksman",
+    "rnix-lsp",
+    "nixpkgs-fmt",
+
 
     -- "python3",
     -- "python3-venv",
