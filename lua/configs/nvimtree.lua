@@ -13,7 +13,7 @@ local config = {
   },
 
   view = {
-    width = 30,
+    width = 27,
     preserve_window_proportions = true,
   },
 }

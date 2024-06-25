@@ -145,6 +145,7 @@ return {
         callback = function(_)
           if vim.tbl_contains(ignore_filetypes, vim.bo.filetype) then
             vim.b.focus_disable = true
+            vim.b.winfixwidth = 20
           else
             vim.b.focus_disable = false
           end
