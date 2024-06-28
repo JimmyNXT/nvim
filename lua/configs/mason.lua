@@ -25,7 +25,6 @@ local config = {
     "rnix-lsp",
     "nixpkgs-fmt",
 
-
     -- "python3",
     -- "python3-venv",
     -- "nodejs",

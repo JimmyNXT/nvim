@@ -1,6 +1,4 @@
-require "options"
-return {
-  {
+require "options" return { {
     "nvim-treesitter/nvim-treesitter",
     event = { "BufReadPost", "BufNewFile" },
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
@@ -83,7 +81,6 @@ return {
       require("obsidian").setup(opts)
     end,
   },
-
   {
     "hedyhli/outline.nvim",
     lazy = true,
@@ -105,53 +102,5 @@ return {
       "tpope/vim-obsession",
       "tpope/vim-unimpaired",
     },
-  },
-  {
-    "mfussenegger/nvim-dap",
-    lazy = false,
-    opts = function()
-      return require "configs.dap"
-    end,
-    config = function(_, opts) end,
-  },
-  {
-    "nvim-focus/focus.nvim",
-    lazy = false,
-    opts = function()
-      return require "configs.focus"
-    end,
-    config = function(_, opts)
-      require("focus").setup(opts)
-
-      local ignore_filetypes = { "neo-tree", "NvimTree" }
-      local ignore_buftypes = { "nofile", "prompt", "popup" }
-
-      local augroup = vim.api.nvim_create_augroup("FocusDisable", { clear = true })
-
-      vim.api.nvim_create_autocmd("WinEnter", {
-        group = augroup,
-        callback = function(_)
-          if vim.tbl_contains(ignore_buftypes, vim.bo.buftype) then
-            vim.w.focus_disable = true
-          else
-            vim.w.focus_disable = false
-          end
-        end,
-        desc = "Disable focus autoresize for BufType",
-      })
-
-      vim.api.nvim_create_autocmd("FileType", {
-        group = augroup,
-        callback = function(_)
-          if vim.tbl_contains(ignore_filetypes, vim.bo.filetype) then
-            vim.b.focus_disable = true
-            vim.b.winfixwidth = 20
-          else
-            vim.b.focus_disable = false
-          end
-        end,
-        desc = "Disable focus autoresize for FileType",
-      })
-    end,
   },
 }

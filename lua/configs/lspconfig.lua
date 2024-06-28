@@ -51,7 +51,7 @@ lspconfig.pyright.setup {
 }
 
 lspconfig.marksman.setup {
-  on_init = on_attach,
+  on_attach = on_attach,
   on_init = on_init,
   capabilities = capabilities,
   filetypes= {"markdown", "markdown.mdx"}
@@ -62,5 +62,5 @@ lspconfig.rnix.setup{
   on_init = on_init,
   on_attach = on_attach,
   capabilities = capabilities,
-  filetypes = {"nix"}
+  filetypes = {"nix"},
 }
