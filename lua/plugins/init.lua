@@ -1,4 +1,6 @@
-require "options" return { {
+require "options"
+return {
+  {
     "nvim-treesitter/nvim-treesitter",
     event = { "BufReadPost", "BufNewFile" },
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
@@ -102,5 +104,16 @@ require "options" return { {
       "tpope/vim-obsession",
       "tpope/vim-unimpaired",
     },
+  },
+  {
+    "mfussenegger/nvim-jdtls",
+    ft = "java",
+    lazy = true,
+    opts = function ()
+      return require("configs.java")
+    end,
+    config = function (_, opts)
+      require("jdtls").start_or_attach(opts)
+    end
   },
 }
