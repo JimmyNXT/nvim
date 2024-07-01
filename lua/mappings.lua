@@ -12,7 +12,6 @@ map("n", "<leader>fj", "<CMD>Telescope marks<CR>", { desc = "Telescope Marks" })
 map("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Toggle Symbols Outline" })
 map("n", "<leader>gh", "<cmd>Gitsigns preview_hunk<CR>", { desc = "Git Perview Hunk" })
 map("n", "<leader>gbt", "<cmd>Gitsigns toggle_current_line_blame<CR>", { desc = "Git Toggle blame" })
--- map("n", "-", "<cmd>Oil<CR>", { desc = "Open Oil" })
 map("n", "<leader>fr", "<cmd>Telescope resume<CR>", { desc = "Telescope resume" })
 --map("i", "jk", "<ESC>")
 
