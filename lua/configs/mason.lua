@@ -22,13 +22,13 @@ local config = {
 
     -- Markdown
     "marksman",
-    "rnix-lsp",
-    "nixpkgs-fmt",
 
-    -- "python3",
-    -- "python3-venv",
-    -- "nodejs",
-    -- "npm",
+    -- Nix
+    -- "rnix-lsp",
+    -- "nixpkgs-fmt",
+
+    -- Java
+    -- "jdtls",
   },
 }
 

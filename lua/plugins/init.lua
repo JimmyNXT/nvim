@@ -83,6 +83,7 @@ return {
       require("obsidian").setup(opts)
     end,
   },
+
   {
     "hedyhli/outline.nvim",
     lazy = true,
@@ -95,6 +96,7 @@ return {
       require("outline").setup(opts)
     end,
   },
+
   {
     "tpope/vim-fugitive",
     cmd = { "Git" },
@@ -105,15 +107,16 @@ return {
       "tpope/vim-unimpaired",
     },
   },
-  {
-    "mfussenegger/nvim-jdtls",
-    ft = "java",
-    lazy = true,
-    opts = function ()
-      return require("configs.java")
-    end,
-    config = function (_, opts)
-      require("jdtls").start_or_attach(opts)
-    end
-  },
+
+  -- {
+  --   "mfussenegger/nvim-jdtls",
+  --   ft = "java",
+  --   lazy = true,
+  --   opts = function ()
+  --     return require("configs.java")
+  --   end,
+  --   config = function (_, opts)
+  --     require("jdtls").start_or_attach(opts)
+  --   end
+  -- },
 }

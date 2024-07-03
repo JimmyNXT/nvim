@@ -12,7 +12,7 @@ local options = {
     sh = { "shfmt" },
     cpp = { "clang-format" },
     c = { "clang-format" },
-    nix = {"nixpkgs-fmt"},
+    -- nix = {"nixpkgs-fmt"},
   },
   -- format_on_save = {
   --   timeout = 500,

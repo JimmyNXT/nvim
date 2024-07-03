@@ -58,9 +58,9 @@ lspconfig.marksman.setup {
 }
 
 
-lspconfig.rnix.setup{
-  on_init = on_init,
-  on_attach = on_attach,
-  capabilities = capabilities,
-  filetypes = {"nix"},
-}
+-- lspconfig.rnix.setup{
+--   on_init = on_init,
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   filetypes = {"nix"},
+-- }
