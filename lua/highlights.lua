@@ -27,6 +27,18 @@ M.add = {
     bg = "one_bg",
     fg = "teal",
   },
+  St_date_sep = {
+    bg = "one_bg",
+    fg = "#ffb366",
+  },
+  St_date_icon = {
+    bg = "#ffb366",
+    fg = "one_bg",
+  },
+  St_date_text = {
+    bg = "one_bg",
+    fg = "#ffb366",
+  },
 }
 
 return M
