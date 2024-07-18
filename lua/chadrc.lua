@@ -11,7 +11,7 @@ M.ui = {
     
     modules = {
       time = function()
-        return "%#St_time_sep#%#St_time_icon#󰥔 %#St_time_text#" .. os.date " %H:%M  "
+        return "%#St_time_sep#%#St_time_icon#󰥔 %#St_time_text#" .. os.date " %H:%M %d-%m-%Y "
       end
     }
   },
