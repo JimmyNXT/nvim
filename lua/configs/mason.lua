@@ -13,7 +13,7 @@ local config = {
     "prettier",
 
     -- c/cpp stuff
-    "clangd",
+    -- "clangd",
     "clang-format",
     "eslint-lsp",
     "pyright",
