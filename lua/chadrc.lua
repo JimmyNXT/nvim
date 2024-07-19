@@ -14,7 +14,7 @@ M.ui = {
         return "%#St_time_sep#%#St_time_icon#󰥔 %#St_time_text#" .. os.date " %H:%M "
       end,
       date = function()
-        return "%#St_date_sep#%#St_date_icon#𝍄 %#St_date_text#" .. os.date " %d-%m-%Y "
+        return "%#St_date_sep#%#St_date_icon#𝍄 %#St_date_text#" .. os.date " %d/%m/%Y "
       end
     
     }
