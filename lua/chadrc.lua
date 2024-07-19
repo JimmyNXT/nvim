@@ -19,8 +19,9 @@ M.ui = {
     
     }
   },
-  
-
+  tabufline = {
+      lazyload = false,
+  },
   hl_override = highlights.override,
   hl_add = highlights.add,
 }
