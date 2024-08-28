@@ -6,7 +6,7 @@ return {
   },
   version = "^1.0.0", -- optional: only update when a new 1.x version is released
   config = function()
-    vim.g.barbar_auto_setup = false
+    vim.g.barbar_auto_setup = true
 
     require("barbar").setup {
       -- WARN: do not copy everything below into your config!
@@ -14,14 +14,14 @@ return {
       --       The defaults are suitable for most people.
 
       -- Enable/disable animations
-      animation = true,
+      animation = false,
 
       -- Automatically hide the tabline when there are this many buffers left.
       -- Set to any value >=0 to enable.
-      auto_hide = false,
+      auto_hide = true,
 
       -- Enable/disable current/total tabpages indicator (top right corner)
-      tabpages = true,
+      tabpages = false,
 
       -- Enables/disable clickable tabs
       --  - left-click: go to buffer
@@ -97,7 +97,7 @@ return {
 
       -- If true, new buffers will be inserted at the start/end of the list.
       -- Default is to insert after current buffer.
-      insert_at_end = false,
+      insert_at_end = true,
       insert_at_start = false,
 
       -- Sets the maximum padding width with which to surround each tab
@@ -128,7 +128,7 @@ return {
           align = "center", -- *optionally* specify an alignment (either 'left', 'center', or 'right')
         },
         -- Or, specify the event which the sidebar executes when leaving:
-        ["neo-tree"] = { event = "BufWipeout" },
+        ["nvimtree"] = { event = "BufWipeout" },
         -- Or, specify all three
         Outline = { event = "BufWinLeave", text = "symbols-outline", align = "right" },
       },
@@ -140,7 +140,7 @@ return {
 
       -- Sets the name of unnamed buffers. By default format is "[Buffer X]"
       -- where X is the buffer number. But only a static string is accepted here.
-      no_name_title = nil,
+      no_name_title = "Empty Buffer",
 
       -- sorting options
       sort = {
@@ -148,5 +148,6 @@ return {
         ignore_case = true,
       },
     }
+    vim.keymap.set("n", "<leader>x", "<Cmd>BufferClose<CR>", { desc = "Close Buffer" })
   end,
 }
