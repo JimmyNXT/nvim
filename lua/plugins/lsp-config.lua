@@ -25,10 +25,6 @@ return {
         capabilities = capabilities,
       }
 
-      lspconfig.solargraph.setup {
-        capabilities = capabilities,
-      }
-
       lspconfig.html.setup {
         capabilities = capabilities,
       }
@@ -53,10 +49,15 @@ return {
         filetypes = { "markdown", "markdown.mdx" },
       }
 
-      vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-      vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
-      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+      lspconfig.vimls.setup{
+        capabilities = capabilities,
+        filetypes = { "vim" },
+      }
+
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, {desc = "LSP Hover"})
+      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {desc = "Goto Definition"})
+      vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {desc = "Show Referance"})
+      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {desc = "Code Actions"})
     end,
   },
 }

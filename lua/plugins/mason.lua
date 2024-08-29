@@ -9,6 +9,9 @@ return {
         "lua-language-server",
         "stylua",
 
+        -- Vim stuff
+        "vim-language-server",
+
         -- web dev stuff
         "css-lsp",
         "html-lsp",

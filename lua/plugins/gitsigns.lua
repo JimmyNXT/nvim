@@ -10,18 +10,12 @@ return {
           delete = { text = "󰍵" },
           changedelete = { text = "󱕖" },
         },
-        on_attach = function(bufnr)
+        on_attach = function(_)
           local gs = package.loaded.gitsigns
 
-          local function opts(desc)
-            return { buffer = bufnr, desc = desc }
-          end
-
-          local map = vim.keymap.set
-
-          map("n", "<leader>rh", gs.reset_hunk, opts "Reset Hunk")
-          map("n", "<leader>ph", gs.preview_hunk, opts "Preview Hunk")
-          map("n", "<leader>gb", gs.blame_line, opts "Blame Line")
+          vim.keymap.set("n", "<leader>rh", gs.reset_hunk, { desc = "Reset Hunk" })
+          vim.keymap.set("n", "<leader>ph", gs.preview_hunk, { desc = "Preview Hunk" })
+          vim.keymap.set("n", "<leader>gb", gs.blame_line, { desc = "Blame Line" })
         end,
       }
     end,
