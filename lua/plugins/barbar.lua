@@ -18,7 +18,7 @@ return {
 
       -- Automatically hide the tabline when there are this many buffers left.
       -- Set to any value >=0 to enable.
-      auto_hide = true,
+      auto_hide = false,
 
       -- Enable/disable current/total tabpages indicator (top right corner)
       tabpages = false,
@@ -29,8 +29,8 @@ return {
       clickable = true,
 
       -- Excludes buffers from the tabline
-      exclude_ft = { "javascript" },
-      exclude_name = { "package.json" },
+      -- exclude_ft = { "javascript" },
+      -- exclude_name = { "package.json" },
 
       -- A buffer to this direction will be focused (if it exists) when closing the current buffer.
       -- Valid options are 'left' (the default), 'previous', and 'right'
@@ -55,17 +55,17 @@ return {
         buffer_number = false,
         button = "",
         -- Enables / disables diagnostic symbols
-        diagnostics = {
-          [vim.diagnostic.severity.ERROR] = { enabled = true, icon = "ﬀ" },
-          [vim.diagnostic.severity.WARN] = { enabled = false },
-          [vim.diagnostic.severity.INFO] = { enabled = false },
-          [vim.diagnostic.severity.HINT] = { enabled = true },
-        },
-        gitsigns = {
-          added = { enabled = true, icon = "+" },
-          changed = { enabled = true, icon = "~" },
-          deleted = { enabled = true, icon = "-" },
-        },
+        -- diagnostics = {
+        --   [vim.diagnostic.severity.ERROR] = { enabled = true, icon = "ﬀ" },
+        --   [vim.diagnostic.severity.WARN] = { enabled = false },
+        --   [vim.diagnostic.severity.INFO] = { enabled = false },
+        --   [vim.diagnostic.severity.HINT] = { enabled = true },
+        -- },
+        -- gitsigns = {
+        --   added = { enabled = true, icon = "+" },
+        --   changed = { enabled = true, icon = "~" },
+        --   deleted = { enabled = true, icon = "-" },
+        -- },
         filetype = {
           -- Sets the icon's highlight group.
           -- If false, will use nvim-web-devicons colors
@@ -140,7 +140,7 @@ return {
 
       -- Sets the name of unnamed buffers. By default format is "[Buffer X]"
       -- where X is the buffer number. But only a static string is accepted here.
-      no_name_title = "Empty Buffer",
+      no_name_title = "No Name",
 
       -- sorting options
       sort = {
@@ -149,5 +149,6 @@ return {
       },
     }
     vim.keymap.set("n", "<leader>x", "<Cmd>BufferClose<CR>", { desc = "Close Buffer" })
+    vim.keymap.set("n", "<Tab>", "<Cmd>BufferNext<CR>", { desc = "Close Next" })
   end,
 }
