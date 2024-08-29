@@ -7,6 +7,14 @@ vim.g.background = "light"
 
 vim.opt.swapfile = false
 
+vim.opt.spelllang = "en_gb"
+vim.opt.spell = true
+vim.opt.guifont= "SauceCodePro NF SemiBold"
+vim.opt.virtualedit="block"
+vim.wo.relativenumber = true
+vim.opt.scrolloff = 10
+vim.opt.sidescrolloff = 8
+
 -- Navigate vim panes better
 vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
 vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
